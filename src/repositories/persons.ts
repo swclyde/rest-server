@@ -22,11 +22,12 @@ export class Persons {
         return this._collection[id] || null;
     }
 
-    public update(person: Person) : boolean {
-        if (!person || !person.id) {
+    public update(id: number, person: Person) : boolean {
+        if (id==0 || !person || (!!person.id && id != person.id)) {            
             return false;
         }
-        this._collection[person.id] = person;
+        person.id = id;
+        this._collection[id] = person;
         return true;
     }
 
@@ -37,6 +38,10 @@ export class Persons {
     }
 
     public delete(id: number) : Person | null {
+        console.log('in delete, with id=', id);
+        if (id == 0) {
+            return null;
+        }        
         const person = this._collection[id] || null;
         delete this._collection[id];
         return person;

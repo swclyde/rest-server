@@ -23,8 +23,8 @@ export default class PersonController {
   }
 
   @Put("/:id")
-  public async updatePerson(@Body() body: Person): Promise<boolean> {
-    return this.persons.update(body);
+  public async updatePerson(@Path() id: string, @Body() body: Person): Promise<boolean> {
+    return this.persons.update(Number(id), body);
   }
 
   @Delete("/all")
@@ -34,7 +34,7 @@ export default class PersonController {
 
   @Delete("/:id")
   public async deletePerson(@Path() id: string): Promise<Person | null> {
-    return this.persons.get(Number(id));
+    return this.persons.delete(Number(id));
   }
 
 
