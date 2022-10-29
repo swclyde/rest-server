@@ -38,7 +38,6 @@ export class Persons {
     }
 
     public delete(id: number) : Person | null {
-        console.log('in delete, with id=', id);
         if (id == 0) {
             return null;
         }        

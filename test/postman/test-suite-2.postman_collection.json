@@ -1,0 +1,259 @@
+{
+	"info": {
+		"_postman_id": "1a42d046-793d-46e4-be83-86ea3a7df419",
+		"name": "Sample RESTFulSErvice - Test Suite 2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10679611"
+	},
+	"item": [
+		{
+			"name": "Delete All",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response body is correct\", function () {",
+							"    var responseValue = pm.response.json();",
+							"    pm.expect(responseValue).to.eql({ \"message\": \"Success\" });",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/persons/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"persons",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Person 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response body is correct\", function () {",
+							"    var responseValue = pm.response.json();",
+							"    expectedValue = {",
+							"        \"id\": 1,",
+							"        \"firstName\": \"Joe\",",
+							"        \"lastName\": \"Jones\",",
+							"        \"favoriteColor\": \"Cyan\",",
+							"        \"birthYear\": \"1970\"",
+							"    };",
+							"    pm.expect(responseValue).to.eql(expectedValue);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"Joe\",\n    \"lastName\": \"Jones\",\n    \"favoriteColor\": \"Cyan\",\n    \"birthYear\": \"1970\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/persons",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"persons"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Person 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response body is correct\", function () {",
+							"    var responseValue = pm.response.json();",
+							"    expectedValue = {",
+							"        \"id\": 2,",
+							"        \"firstName\": \"Sue\",",
+							"        \"lastName\": \"Smith\",",
+							"        \"birthYear\": \"1972\"",
+							"    };",
+							"    pm.expect(responseValue).to.eql(expectedValue);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"Sue\",\n    \"lastName\": \"Smith\",\n    \"birthYear\": \"1972\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/persons",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"persons"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Person 3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response body is correct\", function () {",
+							"    var responseValue = pm.response.json();",
+							"    expectedValue = {",
+							"        \"id\": 3,",
+							"        \"firstName\": \"Pam\",",
+							"        \"lastName\": \"Patternson\"",
+							"    };",
+							"    pm.expect(responseValue).to.eql(expectedValue);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"Pam\",\n    \"lastName\": \"Patternson\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/persons",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"persons"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete All",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response body is correct\", function () {",
+							"    var responseValue = pm.response.json();",
+							"    pm.expect(responseValue).to.eql({ \"message\": \"Success\" });",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/persons/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"persons",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List persons - should be empty",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response body is correct\", function () {",
+							"    var responseValue = pm.response.json();",
+							"    pm.expect(responseValue).to.eql([]);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/persons",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"persons"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
