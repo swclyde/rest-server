@@ -7,6 +7,7 @@ import { Persons } from '../repositories';
 export default class PersonController {
   private persons: Persons = Persons.instance();
 
+  // TODO: Extend the functionality of this method to handle query parameters for filtering the persons.
   @Get("/")
   public async getPersons(): Promise<Array<Person>> {
     return this.persons.list();

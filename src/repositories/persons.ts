@@ -46,6 +46,7 @@ export class Persons {
         return person;
     }
 
+    // TODO: Extend this method to allow filters by various person fields
     public list() : Array<Person> {
         return Object.values(this._collection);
     }
